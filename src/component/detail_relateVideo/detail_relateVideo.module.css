@@ -1,0 +1,18 @@
+.box {
+  display: flex;
+  box-shadow: 6px 6px 12px #c7c7c7;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+
+.imgBox img {
+  width: 8rem;
+}
+.title {
+  font-size: 1rem;
+}
+.imgBox,
+.textBox {
+  pointer-events: none;
+}

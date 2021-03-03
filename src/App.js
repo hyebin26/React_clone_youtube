@@ -1,13 +1,22 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import styles from "./app.module.css";
 import Contents from "./component/contents/contents";
-import Header from "./component/header/header";
+import Detail from "./component/detail/detail";
 
 function App() {
   return (
-    <section className={styles.container}>
-      <Header />
-      <Contents />
-    </section>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Contents />
+          </Route>
+          <Route path="/detail">
+            <Detail />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

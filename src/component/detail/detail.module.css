@@ -1,0 +1,9 @@
+@value first_width from "../../common/styles.css";
+
+.container {
+  max-width: first_width;
+  margin: 0 auto;
+}
+.detailCotaniner {
+  display: flex;
+}

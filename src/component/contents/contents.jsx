@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import Header from "../header/header";
 import Video from "../video/video";
 import styles from "./contents.module.css";
 
 const Contents = () => {
   const [videos, setVideos] = useState([]);
+  const history = useHistory();
+  console.log(videos);
 
   const loadData = async () => {
     await fetch(
@@ -13,18 +17,29 @@ const Contents = () => {
       .then((result) => setVideos(result.items))
       .catch((err) => console.log(err));
   };
+  const onClickVideo = (video) => {
+    history.push({
+      pathname: "/detail",
+      state: { video },
+    });
+  };
 
   useEffect(() => {
     loadData();
   }, []);
   return (
-    <section className={styles.container}>
-      <ul className={styles.contentContainer}>
-        {videos.length === 0
-          ? false
-          : videos.map((video, index) => <Video video={video} key={index} />)}
-      </ul>
-    </section>
+    <>
+      <Header />
+      <section className={styles.container}>
+        {/* <ul className={styles.contentContainer}>
+          {videos.length === 0
+            ? false
+            : videos.map((video, index) => (
+                <Video video={video} key={index} onClickVideo={onClickVideo} />
+              ))}
+        </ul> */}
+      </section>
+    </>
   );
 };
 

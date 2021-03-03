@@ -1,0 +1,15 @@
+.box {
+  flex: 1 1 30%;
+}
+
+.title {
+  padding: 0.5rem 0;
+}
+.publishedAt {
+  font-size: 0.8rem;
+  color: rgb(161, 161, 161);
+  padding: 0.3rem 0;
+}
+.chaTitle {
+  padding: 0.5rem 0;
+}
