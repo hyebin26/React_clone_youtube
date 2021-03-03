@@ -19,7 +19,7 @@ const Contents = () => {
   }, []);
   return (
     <section className={styles.container}>
-      <ul>
+      <ul className={styles.contentContainer}>
         {videos.length === 0
           ? false
           : videos.map((video, index) => <Video video={video} key={index} />)}

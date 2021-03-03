@@ -1,0 +1,15 @@
+@value first_width from "../../common/styles.css";
+
+.container {
+  max-width: first_width;
+  margin: 0 auto;
+}
+.contentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: 2s;
+}
+.contentContainer :hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,28 @@
+.box {
+  box-shadow: 6px 6px 12px #c7c7c7;
+  display: flex;
+  flex: 0 1 48%;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 0.3rem 0;
+}
+
+.textBox,
+.imgBox {
+  pointer-events: none;
+}
+
+.imgBox img {
+  width: 12rem;
+  height: 8rem;
+}
+
+.textBox {
+  padding: 0.2rem 0.8rem;
+}
+.channelTitle {
+  padding-top: 0.1rem;
+  font-size: 0.8rem;
+  color: rgb(167, 167, 167);
+}
