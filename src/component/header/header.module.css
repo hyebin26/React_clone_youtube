@@ -1,5 +1,7 @@
+@value first_width from "../../common/styles.css";
+
 .container {
-  max-width: 40rem;
+  max-width: first_width;
   margin: 0 auto;
   border-bottom: 1px solid black;
   display: flex;
