@@ -5,7 +5,7 @@ import Detail from "./component/detail/detail";
 function App({ youtube }) {
   return (
     <>
-      <BrowserRouter basename="/react_clone_youtube">
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/">
             <Contents youtube={youtube} />
