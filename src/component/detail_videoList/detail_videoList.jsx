@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useDeepCompareEffect from "use-deep-compare-effect";
 import DetailRelateVideo from "../detail_relateVideo/detail_relateVideo";
 import styles from "./detail_videoList.module.css";
 
@@ -14,9 +15,9 @@ const DetailVideoList = ({ video, onClickVideo }) => {
       .then((result) => setRelatedVideo(result.items))
       .catch((err) => console.log(err));
   };
-  useEffect(() => {
+  useDeepCompareEffect(() => {
     loadRelatedVideo();
-  }, []);
+  }, [video]);
   return (
     <ul className={styles.box}>
       {relatedVideo.map((video, index) => (

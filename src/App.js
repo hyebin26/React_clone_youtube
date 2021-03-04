@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import styles from "./app.module.css";
 import Contents from "./component/contents/contents";
 import Detail from "./component/detail/detail";
 

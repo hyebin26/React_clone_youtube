@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Header from "../header/header";
 import Video from "../video/video";
 import styles from "./contents.module.css";
 
 const Contents = () => {
   const [videos, setVideos] = useState([]);
-  const [hello, setHello] = useState([]);
-
+  const location = useLocation();
   const history = useHistory();
 
   const loadData = async () => {
@@ -26,8 +25,12 @@ const Contents = () => {
   };
 
   useEffect(() => {
-    loadData();
-  }, []);
+    if (location.state) {
+      setVideos(location.state.video.items);
+    } else {
+      loadData();
+    }
+  }, [location.state]);
   return (
     <>
       <Header />

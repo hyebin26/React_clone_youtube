@@ -11,7 +11,7 @@ const Video = ({ video, onClickVideo }) => {
   return (
     <li className={styles.box} onClick={clickVideo}>
       <div className={styles.imgBox}>
-        <img src={thumbnail} alt="image" />
+        <img src={thumbnail} alt="thumbnail" />
       </div>
       <div className={styles.textBox}>
         <p className={styles.title}>{title}</p>

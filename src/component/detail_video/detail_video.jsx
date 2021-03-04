@@ -8,6 +8,7 @@ const DetailVideo = ({ video }) => {
       <div className={styles.videoContainer}>
         <iframe
           id="ytplayer"
+          title="youtube"
           type="text/html"
           width="580"
           height="360"
