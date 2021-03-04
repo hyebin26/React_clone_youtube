@@ -53,3 +53,13 @@
   height: 1.3rem;
   width: 1.3rem;
 }
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0.5rem 3rem;
+  }
+  .searchContainer input {
+    width: 80%;
+    font-size: 1rem;
+  }
+}

@@ -13,3 +13,10 @@
 .contentContainer :hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 800px) {
+  .contentContainer {
+    display: block;
+    padding: 0 3rem;
+  }
+}
