@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+``import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Contents from "./component/contents/contents";
 import Detail from "./component/detail/detail";
 
 function App({ youtube }) {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/react_clone_youtube">
         <Switch>
-          <Route exact path="/react_clone_youtube/">
+          <Route exact path="/">
             <Contents youtube={youtube} />
           </Route>
-          <Route path="/react_clone_youtube/detail">
+          <Route path="/detail">
             <Detail youtube={youtube} />
           </Route>
         </Switch>
