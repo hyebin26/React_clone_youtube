@@ -7,7 +7,7 @@ function App({ youtube }) {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path="https://hyebin26.github.io/react_clone_youtube/">
+          <Route exact path="/react_clone_youtube/">
             <Contents youtube={youtube} />
           </Route>
           <Route path="/react_clone_youtube/detail">
