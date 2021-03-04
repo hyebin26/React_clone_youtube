@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./detail_video.module.css";
 
-const DetailVideo = ({ video }) => {
+const DetailVideo = memo(({ video }) => {
   const { title, description, publishedAt, channelTitle } = video.snippet;
   return (
     <div className={styles.box}>
@@ -25,6 +25,6 @@ const DetailVideo = ({ video }) => {
       </div>
     </div>
   );
-};
+});
 
 export default DetailVideo;

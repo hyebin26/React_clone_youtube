@@ -12,14 +12,14 @@ const Detail = ({ youtube }) => {
 
   const onClickVideo = (video) => {
     history.push({
-      pathname: "/detail",
+      pathname: "/react_clone_youtube/detail",
       state: { video: video },
     });
   };
 
   return (
     <section className={styles.container}>
-      <Header />
+      <Header youtube={youtube} />
       <div className={styles.detailCotaniner}>
         <DetailVideo video={video} />
         <DetailVideoList

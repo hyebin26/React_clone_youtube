@@ -11,7 +11,7 @@ const Contents = ({ youtube }) => {
 
   const onClickVideo = (video) => {
     history.push({
-      pathname: "/detail",
+      pathname: "/react_clone_youtube/detail",
       state: { video },
     });
   };

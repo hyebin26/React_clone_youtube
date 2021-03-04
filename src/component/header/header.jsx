@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
@@ -12,19 +12,19 @@ const Header = ({ youtube }) => {
   };
   const goToHome = (video) => {
     history.push({
-      pathname: "/",
+      pathname: "/react_clone_youtube/",
       state: { video: video },
     });
   };
-  const clickSearchBtn = async (e) => {
+  const clickSearchBtn = useCallback((e) => {
     e.preventDefault();
+
     let val = searchRef.current.value;
     youtube
       .search(val)
       .then((res) => goToHome(res))
       .catch((err) => console.log(err));
-  };
-
+  });
   return (
     <header className={styles.container}>
       <Link to="/">

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./detail_relateVideo.module.css";
 
-const DetailRelateVideo = ({ video, onClickVideo }) => {
+const DetailRelateVideo = memo(({ video, onClickVideo }) => {
   if (video.snippet === undefined) {
     return false;
   }
@@ -21,6 +21,6 @@ const DetailRelateVideo = ({ video, onClickVideo }) => {
       </div>
     </li>
   );
-};
+});
 
 export default DetailRelateVideo;
