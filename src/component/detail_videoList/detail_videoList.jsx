@@ -3,20 +3,14 @@ import useDeepCompareEffect from "use-deep-compare-effect";
 import DetailRelateVideo from "../detail_relateVideo/detail_relateVideo";
 import styles from "./detail_videoList.module.css";
 
-const DetailVideoList = ({ video, onClickVideo }) => {
+const DetailVideoList = ({ youtube, video, onClickVideo }) => {
   const [relatedVideo, setRelatedVideo] = useState([]);
-  const loadRelatedVideo = async () => {
-    await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${
-        video.id.kind ? video.id.videoId : video.id
-      }&type=video&maxResults=10&key=${process.env.REACT_APP_KEY}`
-    ) //
-      .then((res) => res.json())
-      .then((result) => setRelatedVideo(result.items))
-      .catch((err) => console.log(err));
-  };
+
   useDeepCompareEffect(() => {
-    loadRelatedVideo();
+    youtube
+      .relate(video.id.kind ? video.id.videoId : video.id)
+      .then((res) => setRelatedVideo(res.items))
+      .catch((err) => console.log(err));
   }, [video]);
   return (
     <ul className={styles.box}>

@@ -4,19 +4,11 @@ import Header from "../header/header";
 import Video from "../video/video";
 import styles from "./contents.module.css";
 
-const Contents = () => {
+const Contents = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
   const location = useLocation();
   const history = useHistory();
 
-  const loadData = async () => {
-    await fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&key=${process.env.REACT_APP_KEY}`
-    ) //
-      .then((res) => res.json())
-      .then((result) => setVideos(result.items))
-      .catch((err) => console.log(err));
-  };
   const onClickVideo = (video) => {
     history.push({
       pathname: "/detail",
@@ -28,12 +20,12 @@ const Contents = () => {
     if (location.state) {
       setVideos(location.state.video.items);
     } else {
-      loadData();
+      youtube.mostPopular().then((res) => setVideos(res));
     }
   }, [location.state]);
   return (
     <>
-      <Header />
+      <Header youtube={youtube} />
       <section className={styles.container}>
         <ul className={styles.contentContainer}>
           {videos.length === 0

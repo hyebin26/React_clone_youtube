@@ -2,16 +2,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Contents from "./component/contents/contents";
 import Detail from "./component/detail/detail";
 
-function App() {
+function App({ youtube }) {
   return (
     <>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Contents />
+            <Contents youtube={youtube} />
           </Route>
           <Route path="/detail">
-            <Detail />
+            <Detail youtube={youtube} />
           </Route>
         </Switch>
       </BrowserRouter>

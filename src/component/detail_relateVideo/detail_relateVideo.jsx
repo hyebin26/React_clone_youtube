@@ -2,6 +2,9 @@ import React from "react";
 import styles from "./detail_relateVideo.module.css";
 
 const DetailRelateVideo = ({ video, onClickVideo }) => {
+  if (video.snippet === undefined) {
+    return false;
+  }
   const { title, channelTitle } = video.snippet;
   const thumbnail = video.snippet.thumbnails.medium.url;
   const clickVideo = () => {

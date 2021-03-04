@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./header.module.css";
 
-const Header = (props) => {
+const Header = ({ youtube }) => {
   const searchRef = useRef();
   const [inputValue, setInputValue] = useState();
   const history = useHistory();
@@ -19,11 +19,9 @@ const Header = (props) => {
   const clickSearchBtn = async (e) => {
     e.preventDefault();
     let val = searchRef.current.value;
-    await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${val}&maxResults=20&key=${process.env.REACT_APP_KEY}`
-    ) //
-      .then((res) => res.json())
-      .then((result) => goToHome(result))
+    youtube
+      .search(val)
+      .then((res) => goToHome(res))
       .catch((err) => console.log(err));
   };
 

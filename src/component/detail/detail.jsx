@@ -5,7 +5,7 @@ import Header from "../header/header";
 import styles from "./detail.module.css";
 import DetailVideoList from "../detail_videoList/detail_videoList";
 
-const Detail = (props) => {
+const Detail = ({ youtube }) => {
   const location = useLocation();
   const history = useHistory();
   const video = location.state.video;
@@ -22,7 +22,11 @@ const Detail = (props) => {
       <Header />
       <div className={styles.detailCotaniner}>
         <DetailVideo video={video} />
-        <DetailVideoList video={video} onClickVideo={onClickVideo} />
+        <DetailVideoList
+          video={video}
+          onClickVideo={onClickVideo}
+          youtube={youtube}
+        />
       </div>
     </section>
   );
