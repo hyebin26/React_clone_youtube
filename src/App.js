@@ -1,4 +1,4 @@
-``import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Contents from "./component/contents/contents";
 import Detail from "./component/detail/detail";
 
