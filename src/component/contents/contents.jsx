@@ -6,8 +6,9 @@ import styles from "./contents.module.css";
 
 const Contents = () => {
   const [videos, setVideos] = useState([]);
+  const [hello, setHello] = useState([]);
+
   const history = useHistory();
-  console.log(videos);
 
   const loadData = async () => {
     await fetch(
@@ -31,13 +32,13 @@ const Contents = () => {
     <>
       <Header />
       <section className={styles.container}>
-        {/* <ul className={styles.contentContainer}>
+        <ul className={styles.contentContainer}>
           {videos.length === 0
             ? false
             : videos.map((video, index) => (
                 <Video video={video} key={index} onClickVideo={onClickVideo} />
               ))}
-        </ul> */}
+        </ul>
       </section>
     </>
   );

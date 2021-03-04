@@ -6,7 +6,9 @@ const DetailVideoList = ({ video, onClickVideo }) => {
   const [relatedVideo, setRelatedVideo] = useState([]);
   const loadRelatedVideo = async () => {
     await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${video.id}&type=video&maxResults=10&key=${process.env.REACT_APP_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${
+        video.id.kind ? video.id.videoId : video.id
+      }&type=video&maxResults=10&key=${process.env.REACT_APP_KEY}`
     ) //
       .then((res) => res.json())
       .then((result) => setRelatedVideo(result.items))
