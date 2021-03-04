@@ -12,7 +12,7 @@ const Header = ({ youtube }) => {
   };
   const goToHome = (video) => {
     history.push({
-      pathname: "/react_clone_youtube/",
+      pathname: "/",
       state: { video: video },
     });
   };
